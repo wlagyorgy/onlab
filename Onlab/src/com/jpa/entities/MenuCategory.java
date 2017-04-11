@@ -16,8 +16,7 @@ import javax.persistence.TableGenerator;
 public class MenuCategory {
 	
 	
-	
-	
+		
 	
 	@Id
 	private int menucatId;
