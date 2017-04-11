@@ -1,10 +1,15 @@
 package com.jpa.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -13,6 +18,14 @@ import javax.persistence.TableGenerator;
 
 
 public class Menu {
+	
+	@ManyToOne
+	@JoinColumn(name="restaurantId")
+	private Restaurant restaurant;
+	
+	@OneToOne
+	@JoinColumn(name="menucatId")
+	private MenuCategory menucat;
 	
 	@Id
 	private int menuId;

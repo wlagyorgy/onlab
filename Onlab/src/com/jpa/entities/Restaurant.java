@@ -1,10 +1,13 @@
 package com.jpa.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
  
@@ -14,6 +17,8 @@ import javax.persistence.TableGenerator;
 
 public class Restaurant {
 
+	@OneToMany(mappedBy="restaurant")
+	private Collection<Menu> menus;
 	
 	@Id
 	private int restaurantId;
